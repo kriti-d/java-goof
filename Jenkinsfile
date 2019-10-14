@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'maven install'
+        sh 'mvn clean install'
       }
     }
     stage('snyk') {
