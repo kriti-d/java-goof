@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  tools { 
-    maven 'maven-3.6.0'
-  }
   stages {
     stage('test') {
       steps {
@@ -20,5 +17,8 @@ pipeline {
         snykSecurity(snykInstallation: 'SNYKv2Test', monitorProjectOnBuild: true, failOnIssues: true, targetFile: 'results.html')
       }
     }
+  }
+  tools {
+    maven 'maven-3.6.0'
   }
 }
