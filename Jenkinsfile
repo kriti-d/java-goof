@@ -14,7 +14,7 @@ pipeline {
     }
     stage('snyk') {
       steps {
-        snykSecurity(snykInstallation: 'SNYKv2Test', monitorProjectOnBuild: true, failOnIssues: true, targetFile: 'results.html', snykTokenId: '5478e634-e045-46e4-807e-59b32bc5cefe', organisation: 'Demo Org', projectName: 'java-goo', severity: 'low')
+        snykSecurity(snykInstallation: 'SNYKv2Test', monitorProjectOnBuild: true, failOnIssues: true, targetFile: 'results.html', snykTokenId: 'snyk-token', organisation: 'Demo Org', projectName: 'java-goo', severity: 'low')
       }
     }
   }
