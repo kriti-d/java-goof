@@ -7,11 +7,6 @@ pipeline {
         sh 'mvn -v'
       }
     }
-    stage('build') {
-      steps {
-        sh 'mvn clean install'
-      }
-    }
     stage('snyk') {
       steps {
         snykSecurity(snykInstallation: 'SNYKv2Test', monitorProjectOnBuild: true, failOnIssues: true, snykTokenId: 'snyk-token', projectName: 'java-goof', severity: 'low')
