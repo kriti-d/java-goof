@@ -9,7 +9,7 @@ pipeline {
     }
     stage('snyk') {
       steps {
-        snykSecurity(snykInstallation: 'SNYKv2Test', monitorProjectOnBuild: true, failOnIssues: true, snykTokenId: 'snyk-token', projectName: 'java-goof', severity: 'low')
+        snykSecurity(snykInstallation: 'SNYKv2Test', monitorProjectOnBuild: true, snykTokenId: 'snyk-token', projectName: 'java-goof')
       }
     }
   }
